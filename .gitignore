@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,windows,osx,visualstudiocode
 
 #Text
-*.Text
+*.txt
 #텍스트 파일들은 예외사항으로 처리
 
 ### Node ###
