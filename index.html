@@ -1,30 +1,50 @@
 <!DOCTYPE html>
-<html lang="ko-KR"> 
+<html lang="ko-KR">
 <!--언어-국가코드-->
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>웹카페</title>
   <!-- 웹폰트 먼저 요청해야하기 때문에 먼저 선언 -->
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="./styles/style.css" /> 
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
+
 <body>
-<header class="header">헤더</header>
-<div class="visual">비주얼</div>
-<main class="main">
-  <div class="group group1">그룹1</div>
-  <div class="group group2">그룹2</div>
-  <div class="group group3">그룹3</div>
-  <!-- <div class="clearfix"></div> -->
-</main>
-<article class="slogan">슬로건</article>
-<footer class="footer">
-  <div class="footer-inner">
-    푸터
-  </div>
-</footer>
-<!--  div로 나눈 이유: footer 영역 안에 글자들을 배치할 때 쓰려고 -->
+  <header class="header">
+    <!-- 로고 Start -->
+    <h1 class="logo">
+      <a href="./index-complete.html">
+        <img src="./assets/logo.png" alt="web cafe" width="165" height="35">
+      </a>
+    </h1>
+    <!-- 로고 end -->
+    <!-- ul.member>li*5>span[aria-hidden="true"]{:}+a[href="/"] -->
+    <ul class="member">
+      <li class="first"><a href="/">홈</a></li>
+      <li><span class="icon-colon"></span><a href="/">로그인</a></li>
+      <li><span class="icon-colon"></span><a href="/">회원가입</a></li>
+      <li><span class="icon-colon"></span><a href="/">사이트맵</a></li>
+      <li><span class="icon-colon"></span><a href="/">english</a></li>
+    </ul>
+  </header>
+  <div class="visual">비주얼</div>
+  <main class="main">
+    <div class="group group1">그룹1</div>
+    <div class="group group2">그룹2</div>
+    <div class="group group3">그룹3</div>
+    <!-- <div class="clearfix"></div> -->
+  </main>
+  <article class="slogan">슬로건</article>
+  <footer class="footer">
+    <div class="footer-inner">
+      푸터
+    </div>
+  </footer>
+  <!--  div로 나눈 이유: footer 영역 안에 글자들을 배치할 때 쓰려고 -->
 </body>
+
 </html>

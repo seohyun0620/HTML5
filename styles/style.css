@@ -1,5 +1,6 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./fontello.css);
 /* 기본스타일 */
 *, *::before, *::after{
   box-sizing: border-box; 
@@ -22,15 +23,54 @@ body {
 
 /* 헤더 */
 .header{
-  background-color: pink;
+  background-color: #fff;
   padding: 0 30px; /* 상하:0,좌우:30 /4개면 시계방향 */
   height: 15vh;
+  border-radius: 0 0 15px 15px;
 }
+
+.member{
+  background-color: pink;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+/* :before, ::before ->first child */
+/* :after, ::after ->last child */
+/* 부모와 자식은 띄어쓰기 해야함 */
+/* .member li::before{
+  content: ":" ;
+} */
+
+/* 겹침 Cascading */
+/* 우선순위 규칙(type,class를 주로  씀,id는 거의 안씀), 쉽게 설명하기 위해 점수부여
+li(type slector)은 1점
+.first(class selector)은 10점
+#item (id slector)은 100점 */
+/* .member li:nth-child(n)::befor/ :nth-child(n) : css는 1번부터 시작 */
+/* .member .first::before{
+  content: "" ;
+} */
+
+.member li::before{
+  /* content: "\e800";
+  font-family: "fontello"; */
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+}
+
 /* 비주얼 */
 .visual{
   background: orange;
   height: 10vh;
 }
+
 /* 메인 */
 .main{
   background: lightgreen;
