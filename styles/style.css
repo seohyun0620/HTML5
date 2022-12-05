@@ -6,6 +6,12 @@
   box-sizing: border-box; 
 /* width(padding+borde)+margin */
 }
+
+/* 링크스타일 */
+a{
+  color: inherit;
+  text-decoration: none;
+}
 /* 본문 스타일 */
 body {
   background-color: #ffc;
@@ -63,6 +69,10 @@ li(type slector)은 1점
   width: 1em;
   margin-right: .2em;
   text-align: center;
+}
+
+.member a{
+  text-transform: uppercase;
 }
 
 /* 비주얼 */
