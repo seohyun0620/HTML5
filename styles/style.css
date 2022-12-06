@@ -113,13 +113,29 @@ text-transform: uppercase;
   #e85e2c 70%,
   #ef9126 100%);
   border-radius: 0 0 5px 5px;
-  display: flow-root;
   padding-left: 230px;
+  /* 높이 설정으로 인해 display: flow-root; 생략 가능 */
+  height: 47px;
 }
 
 .menu-item{
-  background-color: aqua;
+  /* background-color: aqua; */
   float: left;
+  border-left: 2px solid #fff;
+}
+
+.menu-button{
+  /* border-width가 0 ,border보다 border-left가 나중에 와야함*/
+  border: 0;
+  background: transparent;
+  /* 여백도 누를 수 있게 menu-item말고 menu-button에 줌 */
+  padding: 0 23px;
+  line-height: 45px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  /* X축,Y축로 1px씩 블러는0 */
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 
 .sub-menu{
