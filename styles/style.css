@@ -3,9 +3,12 @@
 
 /* 숨김 콘텐츠 */
 .a11y-hidden{
-background-color: yellow;
+/* background-color: red; */
 position: absolute;
-top:-1000px;
+width:1px;
+height: 1px;
+overflow: hidden;
+clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 /* 기본스타일 */
@@ -29,7 +32,12 @@ body {
   /* em:부모로부터 상속받은 값을 기준으로 계산,rem:root기준으로 계산 */
   font-size: 1.4rem;
   color: #212121;
-  background-color: #ccc;
+  /* 위에서 아래로 */
+  background: #ccc linear-gradient(to bottom, 
+  #ccc 0%, 
+  #eee 35%, 
+  #fff 70%, 
+  #fff 100%);
   font-family: "Pretendard Variable", Pretendard, -apple-system,
   BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", 
   "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", 
@@ -92,6 +100,35 @@ text-transform: uppercase;
   margin-right: 4px;
 }
 
+/* 메인 메뉴 */
+.navigation{
+  padding-bottom: 80px;
+}
+
+.menu{
+  border-top: 2px solid #212121;
+  background: #e85e2c linear-gradient( to bottom,
+  #ef9126 0%,
+  #e85e2c 35%,
+  #e85e2c 70%,
+  #ef9126 100%);
+  border-radius: 0 0 5px 5px;
+  display: flow-root;
+  padding-left: 230px;
+}
+
+.menu-item{
+  background-color: aqua;
+  float: left;
+}
+
+.sub-menu{
+  background-color: pink;
+  /* 버튼 누를 떄 마다 좌표 바꿔가며 배치할거기 때문에 absolute 씀 */
+  position: absolute;
+  display: none;
+}
+
 /* 비주얼 */
 .visual{
   background: orange;
@@ -129,7 +166,11 @@ width: 190px;
 }
 /* 푸터 */
 .footer{
-  background: gray;
+  background: #ccc linear-gradient(to bottom, 
+  #ccc 0%, 
+  #eee 35%,
+  #fff 70%, 
+  #fff 100%);
 }
 .footer-inner{
   background: silver;
