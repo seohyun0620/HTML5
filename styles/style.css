@@ -62,7 +62,10 @@ body {
   /* background-color: blue; */
   position: absolute;
   top:45px;
-  left:60px
+  left:60px;
+  /* 밑에 숨어있는 로고가 위로 올라옴
+  스태틱이 아닌 포지션일 때 인덱스 조정, z 축의 인덱스를 수정함 */
+  z-index:10;
 }
 
 /* 텍스트 링크 모음 */
@@ -118,7 +121,8 @@ text-transform: uppercase;
   height: 47px;
   position: relative;
 }
-/* html에대해,css에대해,웹표준 메뉴는 li기준 */
+/* html에대해,css에대해,웹표준 메뉴는 li기준 
+나머지는 ?? */
 .menu >li:nth-child(-n+3){
 position: relative;
 }
