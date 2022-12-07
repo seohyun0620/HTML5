@@ -106,7 +106,7 @@ text-transform: uppercase;
 
 /* 메인 메뉴 */
 .navigation{
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .menu{
@@ -153,7 +153,8 @@ position: relative;
 .is-active .menu-button{
 color:yellow;
 }
-/* before,after 둘다 인라인 요소 //부모가 패딩 가지고 있으면 자식은 패딩 영역을 넘을 수x */
+/* before,after 둘다 인라인 요소
+부모가 패딩 가지고 있으면 자식은 패딩 영역을 넘을 수x */
 .is-active .menu-button::after{
   content:"";
   display: block;
@@ -162,12 +163,13 @@ color:yellow;
   }
 
 .sub-menu{
-  background-color: pink;
+  /* background-color: pink; */
   /* 버튼 누를 떄 마다 좌표 바꿔가며 배치할거기 때문에 absolute 씀 */
   /* absolute가 지정되면 block이 생성됨
   독립적인 bfc가 생성되면서 잃어버린 float의 높이를 읽어드림 */
   position: absolute;
-  top: 47;
+  top: 47px;
+  padding: 4px 0;
   display: none;
 }
 
@@ -187,7 +189,7 @@ right: 0;
 
 .sub-menu li{
   display: inline-block;
-  background-color: gold;
+  /* background-color: gold; */
 }
 
 .sub-menu a::before{
@@ -207,13 +209,24 @@ right: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* a에 마우스를 올리면 before로 가라-아이콘바뀜,
+/* a에 마우스를 올리면 아이콘바뀜,
 tab으로 이동했을 때도 아이콘 바뀜 */
 .sub-menu a:hover::before,
 .sub-menu a:focus::before{
 content:"\e801"
 }
 
+.sub-menu a{
+  /* background-color: aqua; */
+  /* 부모(li)가 inline-block이면 자식도 inline, inline-block 쓰는게 좋음  */
+  display: inline-block;
+  padding: 6px 0;
+}
+
+.sub-menu a:hover,
+.sub-menu a:focus{
+  color: #f00;
+}
 /* 비주얼 */
 .visual{
   background: orange;
