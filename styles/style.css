@@ -228,9 +228,24 @@ content:"\e801"
   color: #f00;
 }
 /* 비주얼 */
+@keyframes moveEffect{
+  0%{
+  font-size:12px;
+  }
+  100%{
+  font-size: 24px;
+  }
+}
+
 .visual{
   background: orange;
-  height: 10vh;
+  height: 120px;
+}
+
+.visual-text{
+  background-color: slateblue;
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
 }
 /* 메인 */
 .main{
