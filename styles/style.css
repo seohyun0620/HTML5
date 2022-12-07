@@ -228,24 +228,39 @@ content:"\e801"
   color: #f00;
 }
 /* 비주얼 */
+/* @(at sign rule):정의,선언 */
+/* keyframes:애니메이션 규칙을 정의, 이 규칙을 visual-text에 적용 */
 @keyframes moveEffect{
   0%{
   font-size:12px;
+  color: rgba(0,0,0,0.2);
+  /* x좌표y좌표 */
+  transform: translate(0,0);
   }
   100%{
   font-size: 24px;
+  color: rgba(0,0,0,1);
+  transform: translate(400px,75px);
+
   }
 }
 
 .visual{
   background: orange;
   height: 120px;
+  position: relative;
 }
 
 .visual-text{
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: slateblue;
   animation-name: moveEffect;
   animation-duration: 2000ms;
+  /* 100% 지점에서 끝난걸로 멈춤 */
+  animation-fill-mode: forwards;
+  /* inline-block은 글자크기만큼 줄어들기 때문에 
+  transform하면 스크롤 생기는 현상을 해결해줌 */
+  display: inline-block;
 }
 /* 메인 */
 .main{
