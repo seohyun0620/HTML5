@@ -65,7 +65,8 @@ body {
   top:45px;
   left:60px;
   /* 밑에 숨어있는 로고가 위로 올라옴
-  스태틱이 아닌 포지션일 때 인덱스 조정, z 축의 인덱스를 수정함 */
+  떠 있는 요소에 대해 순서를 정해줄때 사용
+  스태틱이 아닌 포지션일 때 인덱스 조정, z 축의 인덱스를 수정함, 기본값 0 */
   z-index:10;
 }
 
@@ -184,7 +185,7 @@ right: 0;
 .is-active .sub-menu{
   display: block;
   /* 공백처리를 줄바꿈의 대상으로 삼지 말아라 */
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .sub-menu li{
@@ -234,6 +235,7 @@ content:"\e801"
   0%{
   font-size:12px;
   color: rgba(0,0,0,0.2);
+  /* margin이나 padding쓰면 reflow-성능문제가 생겨서 transform속성을 씀 */
   /* x좌표y좌표 */
   transform: translate(0,0);
   }
@@ -255,12 +257,14 @@ content:"\e801"
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: slateblue;
   animation-name: moveEffect;
-  animation-duration: 2000ms;
+  animation-duration: 3000ms;
   /* 100% 지점에서 끝난걸로 멈춤 */
   animation-fill-mode: forwards;
   /* inline-block은 글자크기만큼 줄어들기 때문에 
   transform하면 스크롤 생기는 현상을 해결해줌 */
-  display: inline-block;
+  /* display: inline-block; */
+  position: absolute;
+  animation-timing-function: ease-in-out;
 }
 /* 메인 */
 .main{
