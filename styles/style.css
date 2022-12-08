@@ -31,18 +31,19 @@ a{
 /* 본문 스타일 */
 body {
   /* em:부모로부터 상속받은 값을 기준으로 계산,rem:root기준으로 계산 */
-  font-size: 1.4rem;
   color: #212121;
-  /* 위에서 아래로 */
-  background: #ccc linear-gradient(to bottom, 
-  #ccc 0%, 
-  #eee 35%, 
-  #fff 70%, 
-  #fff 100%);
+  font-size: 1.4rem;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
   BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", 
   "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", 
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background: #ccc;
+  background-image: url(./images/bg_flower.png),
+                    linear-gradient(to bottom, #ccc 0%, #eee 35%,#fff 70%, #fff 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: 50% 0, 0 0;
+  /* 컨텐츠만 움직임 */
+  /* background-attachment: fixed; */
 }
 
 /* 레이아웃 */
@@ -53,7 +54,7 @@ body {
 
 /* 헤더 */
 .header{
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 0 30px; /* 상하:0,좌우:30 /4개면 시계방향 */
   border-radius: 0 0 15px 15px;
   position: relative;
@@ -185,7 +186,7 @@ right: 0;
 .is-active .sub-menu{
   display: block;
   /* 공백처리를 줄바꿈의 대상으로 삼지 말아라 */
-  /* white-space: nowrap; */
+  white-space: nowrap;
 }
 
 .sub-menu li{
@@ -248,14 +249,14 @@ content:"\e801"
 }
 
 .visual{
-  background: orange;
+  /* background: orange; */
   height: 120px;
   position: relative;
 }
 
 .visual-text{
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: slateblue;
+  /* background-color: slateblue; */
   animation-name: moveEffect;
   animation-duration: 3000ms;
   /* 100% 지점에서 끝난걸로 멈춤 */
