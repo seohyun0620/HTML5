@@ -42,6 +42,7 @@ body {
                     linear-gradient(to bottom, #ccc 0%, #eee 35%,#fff 70%, #fff 100%);
   background-repeat: no-repeat, repeat;
   background-position: 50% 0, 0 0;
+  /* 배경은 먼저 쌓인게 먼저 보임 */
   /* 컨텐츠만 움직임 */
   /* background-attachment: fixed; */
 }
@@ -54,7 +55,7 @@ body {
 
 /* 헤더 */
 .header{
-  /* background-color: #fff; */
+  background-color: #fff;
   padding: 0 30px; /* 상하:0,좌우:30 /4개면 시계방향 */
   border-radius: 0 0 15px 15px;
   position: relative;
@@ -248,10 +249,52 @@ content:"\e801"
   }
 }
 
+@keyframes fadeEffect{
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
 .visual{
   /* background: orange; */
   height: 120px;
+  /* 앱솔루트의 before,after를 똑같은 위치에 겹쳐놓기 위해 씀 */
   position: relative;
+}
+/* 1,3번이미지/2,4번이미지 영역 2개여야함
+영역에 컨텐츠를 담을게 아니라 꽃모양 배경만 담을거임
+div에 백그라운드 깔아주면 됨
+비포에 배경2개 애프터의 배경2개 깔아줌
+마크업 안건들이고 싶어서 가상선택자 사용*/
+.visual::before, .visual::after{
+content: "";
+position: absolute;
+/* 부모와 똑같게 하려고 width,height 사용 */
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+animation-name: fadeEffect;
+animation-duration: 2000ms;
+/* 무한 반복 */
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+
+.visual::before{
+  /* background-color: yellow; */
+  /* background-image: url(./images/ani_flower_01.png),
+                    url(./images/ani_flower_02.png);
+  background-repeat: no-repeat;
+  background-position: 0 -10px,600px 0; */
+  background: url(./images/ani_flower_01.png) no-repeat 0 -10px,
+  url(./images/ani_flower_02.png) no-repeat 600px 0;
+}
+.visual::after{
+  /* background-color: pink; */
+  background: url(./images/ani_flower_03.png) no-repeat 300px 0,
+  url(./images/ani_flower_04.png) no-repeat 800px 0;
+  animation-delay: 1000ms;
 }
 
 .visual-text{
@@ -259,14 +302,15 @@ content:"\e801"
   /* background-color: slateblue; */
   animation-name: moveEffect;
   animation-duration: 3000ms;
+  animation-timing-function: ease-in-out;
   /* 100% 지점에서 끝난걸로 멈춤 */
   animation-fill-mode: forwards;
-  /* inline-block은 글자크기만큼 줄어들기 때문에 
-  transform하면 스크롤 생기는 현상을 해결해줌 */
+  /* inline-block은 글자크기만큼 줄어들기 때문에 transform하면 스크롤 생기는 현상을 해결해줌 */
   /* display: inline-block; */
   position: absolute;
-  animation-timing-function: ease-in-out;
+  z-index: 1;
 }
+
 /* 메인 */
 .main{
   background: lightgreen;
