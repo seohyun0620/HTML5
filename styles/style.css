@@ -361,17 +361,18 @@ text-indent: 10px; /*들여쓰기 */
   padding-bottom: 5px;
 }
 .user-email, .user-pw{
-  /* background-color: aqua; */
+  /* background-color: palegreen; */
   margin-bottom: 5px;
 
 }
 
 .login-form label{ /* 아이디 비밀번호 */
-  display: inline-block;
   /* background-color: #e85e2c; */
+  display: inline-block;
   width: 52px
 }
 .login-form input{ 
+  /* background-color: aqua; */
   width: 90px;
   height: 24px;
   border: 1px solid #aaa;
@@ -395,8 +396,35 @@ font-size: 13px;
   background-color: #fff;
   border-radius: 0 0 5px 5px;
   padding: 0 10px 10px 10px;
+  font-size: 13px;
 }
-
+.sign li{
+  display: inline-block;
+}
+/* .sign a{
+  line-height :20px;
+  아이디,비밀번호찾기 오른쪽으로 해보기
+} */
+/*li보다 a에 주는게 더 효과적, 
+li에 주면 a를 블록으로 만들어야하고 공백생김(아이콘과 글자 떨어짐)
+a에 주면 아이콘 눌러도 이동 */
+.sign a::before{
+  content: "\e804";
+  /* 글꼴 알려주기 */
+  font-family: 'fontello';
+  font-weight: normal;
+  text-decoration: inherit;
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 /* 슬로건 */
 .slogan{
   background: skyblue;
