@@ -3,7 +3,7 @@
 @import url(./fonts.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden{
+.a11y-hidden, legend{
 /* background-color: red; */
 position: absolute;
 width:1px;
@@ -313,17 +313,17 @@ animation-direction: alternate;
 
 /* 메인 */
 .main{
-  background: lightgreen;
-  height: 50vh;
+  background: #fff;
+  min-height: 450px;
   display: flow-root;
-  padding: 0 15px;
+  padding: 30px 15px;
+  border-radius: 15px 15px 0 0;
 }
 .group{
   margin: 0 15px;
   float: left;
 }
 .group1{
-background-color: violet;
 width: 250px;
 }
 .group2{
@@ -333,6 +333,58 @@ width: 380px;
 .group3{
 background-color: yellow;
 width: 190px;
+}
+
+/* 로그인 */
+.login{
+  box-shadow: 5px 5px 0 0 #ccc;
+  background: orange radial-gradient(circle at right top, orange, orangered);
+  padding: 10px;
+  border-radius: 5px;
+}
+.login-title{
+background-color: transparent;
+color: yellow;
+font-size: 15px;
+font-weight: 700;
+text-indent: 10px; /*들여쓰기 */
+}
+.login-form{
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+.login-form fieldset{ /*로그인 버튼 위치 */
+  position: relative;
+}
+.user-email{
+  background-color: aqua;
+
+}
+.user-pw{
+background-color: palegreen;
+}
+.login-form label{ /* 아이디 비밀번호 */
+  display: inline-block;
+  background-color: #e85e2c;
+  width: 52px
+}
+.login-form input{ 
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+  
+}
+.sign{
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 0 10px 10px 10px;
+}
+.login-button{
+position: absolute;
+top:0;
+right:0;
 }
 
 /* 슬로건 */
