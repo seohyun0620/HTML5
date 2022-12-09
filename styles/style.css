@@ -395,16 +395,21 @@ font-size: 13px;
 .sign{
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  padding: 0 10px 10px 10px;
-  font-size: 13px;
+  padding: 4px 10px;
+  display: flow-root;
 }
-.sign li{
-  display: inline-block;
+.sign li:first-child {
+  float: left;
 }
-/* .sign a{
-  line-height :20px;
-  아이디,비밀번호찾기 오른쪽으로 해보기
-} */
+
+.sign li:last-child {
+  float: right;
+}
+
+.sign a{
+  /* display: block; */
+  padding: 6px 0;
+}
 /*li보다 a에 주는게 더 효과적, 
 li에 주면 a를 블록으로 만들어야하고 공백생김(아이콘과 글자 떨어짐)
 a에 주면 아이콘 눌러도 이동 */
