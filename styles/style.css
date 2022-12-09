@@ -357,34 +357,44 @@ text-indent: 10px; /*들여쓰기 */
 }
 .login-form fieldset{ /*로그인 버튼 위치 */
   position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
 }
-.user-email{
-  background-color: aqua;
+.user-email, .user-pw{
+  /* background-color: aqua; */
+  margin-bottom: 5px;
 
 }
-.user-pw{
-background-color: palegreen;
-}
+
 .login-form label{ /* 아이디 비밀번호 */
   display: inline-block;
-  background-color: #e85e2c;
+  /* background-color: #e85e2c; */
   width: 52px
 }
 .login-form input{ 
   width: 90px;
   height: 24px;
   border: 1px solid #aaa;
-  
-}
-.sign{
-  background-color: #fff;
-  border-radius: 0 0 5px 5px;
-  padding: 0 10px 10px 10px;
+  /* 입력 서식에 여백 줌 */
+  padding: 1px 1px 1px 5px;
+  border-radius: 3px;
 }
 .login-button{
 position: absolute;
 top:0;
 right:0;
+height: 53px; /* 로그인 버튼 높이 늘림 */
+background-color: orangered;
+color: #fff;
+border: 0;
+padding: 0 8px;
+border-radius: 5px;
+font-size: 13px;
+}
+.sign{
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 0 10px 10px 10px;
 }
 
 /* 슬로건 */
