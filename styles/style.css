@@ -594,7 +594,7 @@ a안에 넣으면 전체영역이 다 링크가 됨 */
 }
 .form-group-label{
   /* background-color: lawngreen; */
-  white-space: nowrap;
+  flex-shrink: 0;
   margin-right: 10px;
 }
 .form-group-input{
@@ -603,10 +603,11 @@ a안에 넣으면 전체영역이 다 링크가 됨 */
   height: 24px;
   padding: 1px 1px 1px 5px;
   flex-grow: 1;
-  /* min-width: 0; */
+  min-width: 0;
+  width: 100%;
 }
 .search-button{
-  white-space: nowrap;
+  flex-shrink: 0;
   background-color: #000;
   color: #fff;
   height: 24px;
