@@ -1,45 +1,50 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 @import url(./fonts.css);
+@import url(./fontello.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden, legend{
-/* background-color: red; */
-position: absolute;
-width:1px;
-height: 1px;
-overflow: hidden;
-clip-path: polygon(0 0, 0 0, 0 0);
+.a11y-hidden,
+legend {
+  /* background-color: red; */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 
 /* 기본스타일 */
-*, *::before, *::after{
-  box-sizing: border-box; 
-/* width(padding+borde)+margin */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* width(padding+borde)+margin */
 }
 
 /* root 요소 */
-html{ 
+html {
   font-size: 10px;
 }
 
 /* 링크 스타일 */
-a{
-  color:inherit;
+a {
+  color: inherit;
   text-decoration: none;
 }
+
 /* 본문 스타일 */
 body {
   /* em:부모로부터 상속받은 값을 기준으로 계산,rem:root기준으로 계산 */
   color: #212121;
   font-size: 1.4rem;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
-  BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", 
-  "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", 
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   background: #ccc;
   background-image: url(./images/bg_flower.png),
-                    linear-gradient(to bottom, #ccc 0%, #eee 35%,#fff 70%, #fff 100%);
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
   background-repeat: no-repeat, repeat;
   background-position: 50% 0, 0 0;
   /* 배경은 먼저 쌓인게 먼저 보임 */
@@ -48,34 +53,40 @@ body {
 }
 
 /* 레이아웃 */
-.header, .visual , .main , .slogan , .footer-inner{
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: 940px;
   margin: 0 auto;
 }
 
 /* 헤더 */
-.header{
+.header {
   background-color: #fff;
-  padding: 0 30px; /* 상하:0,좌우:30 /4개면 시계방향 */
+  padding: 0 30px;
+  /* 상하:0,좌우:30 /4개면 시계방향 */
   border-radius: 0 0 15px 15px;
   position: relative;
 }
+
 /* 로고 */
-.logo{
+.logo {
   /* background-color: blue; */
   position: absolute;
-  top:45px;
-  left:60px;
+  top: 45px;
+  left: 60px;
   /* 밑에 숨어있는 로고가 위로 올라옴
   떠 있는 요소에 대해 순서를 정해줄때 사용
   스태틱이 아닌 포지션일 때 인덱스 조정, z 축의 인덱스를 수정함, 기본값 0 */
-  z-index:10;
+  z-index: 10;
 }
 
 /* 텍스트 링크 모음 */
-.member{
+.member {
   /* background-color: aqua; */
-  text-align : right;
+  text-align: right;
   padding: 4px 0;
   /* position 속성을 이용하여 .member 영역을 오른쪽으로 10px만큼 이동 */
   /* position: relative;
@@ -84,17 +95,17 @@ body {
   transform: translateX(10px);
 }
 
-.member li{
+.member li {
   /* background-color: pink; */
   display: inline-block;
 }
 
-.member a{
-/* background-color : coral; */
-/* 모바일에서 클릭할 수 있는 면적 늘림 */
-padding: 6px 10px;
-display: inherit;
-text-transform: uppercase;
+.member a {
+  /* background-color : coral; */
+  /* 모바일에서 클릭할 수 있는 면적 늘림 */
+  padding: 6px 10px;
+  display: inherit;
+  text-transform: uppercase;
 }
 
 /* 마지막 li 요소에 포함된 a요소를 선택하여 
@@ -103,42 +114,43 @@ text-transform: uppercase;
   padding-right: 0;
 } */
 
-.divider{
+.divider {
   margin-right: 4px;
 }
 
 /* 메인 메뉴 */
-.navigation{
+.navigation {
   padding-bottom: 40px;
 }
 
-.menu{
+.menu {
   border-top: 2px solid #212121;
-  background: #e85e2c linear-gradient( to bottom,
-  #ef9126 0%,
-  #e85e2c 35%,
-  #e85e2c 70%,
-  #ef9126 100%);
+  background: #e85e2c linear-gradient(to bottom,
+      #ef9126 0%,
+      #e85e2c 35%,
+      #e85e2c 70%,
+      #ef9126 100%);
   border-radius: 0 0 5px 5px;
   padding-left: 230px;
   /* 높이 설정으로 인해 display: flow-root; 생략 가능 */
   height: 47px;
   position: relative;
 }
+
 /* html에대해,css에대해,웹표준 메뉴는 li기준 
 나머지는 ?? */
-.menu >li:nth-child(-n+3){
-position: relative;
+.menu>li:nth-child(-n+3) {
+  position: relative;
 }
 
-.menu-item{
+.menu-item {
   /* background-color: aqua; */
   position: relative;
   float: left;
   border-left: 2px solid #fff;
 }
 
-.menu-button{
+.menu-button {
   /* border-width가 0 ,border보다 border-left가 나중에 와야함*/
   border: 0;
   background: transparent;
@@ -153,19 +165,20 @@ position: relative;
 }
 
 /* 클래스 사이 띄어쓰기:포함되어있다 */
-.is-active .menu-button{
-color:yellow;
+.is-active .menu-button {
+  color: yellow;
 }
+
 /* before,after 둘다 인라인 요소
 부모가 패딩 가지고 있으면 자식은 패딩 영역을 넘을 수x */
-.is-active .menu-button::after{
-  content:"";
+.is-active .menu-button::after {
+  content: "";
   display: block;
   /* background-color: greenyellow; */
   border-top: 2px solid #000;
-  }
+}
 
-.sub-menu{
+.sub-menu {
   /* background-color: pink; */
   /* 버튼 누를 떄 마다 좌표 바꿔가며 배치할거기 때문에 absolute 씀 */
   /* absolute가 지정되면 block이 생성됨
@@ -176,26 +189,30 @@ color:yellow;
   display: none;
 }
 
-.menu-html, .menu-css, .menu-standards{
-left:0;
+.menu-html,
+.menu-css,
+.menu-standards {
+  left: 0;
 }
 
-.menu-accessibility, .menu-qna, .menu-archive{
-right: 0;
+.menu-accessibility,
+.menu-qna,
+.menu-archive {
+  right: 0;
 }
 
-.is-active .sub-menu{
+.is-active .sub-menu {
   display: block;
   /* 공백처리를 줄바꿈의 대상으로 삼지 말아라 */
   white-space: nowrap;
 }
 
-.sub-menu li{
+.sub-menu li {
   display: inline-block;
   /* background-color: gold; */
 }
 
-.sub-menu a::before{
+.sub-menu a::before {
   content: "\e805";
   /* 글꼴 알려주기 */
   font-family: 'fontello';
@@ -212,14 +229,15 @@ right: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* a에 마우스를 올리면 아이콘바뀜,
 tab으로 이동했을 때도 아이콘 바뀜 */
 .sub-menu a:hover::before,
-.sub-menu a:focus::before{
-content:"\e801"
+.sub-menu a:focus::before {
+  content: "\e801"
 }
 
-.sub-menu a{
+.sub-menu a {
   /* background-color: aqua; */
   /* 부모(li)가 inline-block이면 자식도 inline, inline-block 쓰는게 좋음  */
   display: inline-block;
@@ -227,77 +245,87 @@ content:"\e801"
 }
 
 .sub-menu a:hover,
-.sub-menu a:focus{
+.sub-menu a:focus {
   color: #f00;
 }
+
 /* 비주얼 */
 /* @(at sign rule):정의,선언 */
 /* keyframes:애니메이션 규칙을 정의, 이 규칙을 visual-text에 적용 */
-@keyframes moveEffect{
-  0%{
-  font-size:12px;
-  color: rgba(0,0,0,0.2);
-  /* margin이나 padding쓰면 reflow-성능문제가 생겨서 transform속성을 씀 */
-  /* x좌표y좌표 */
-  transform: translate(0,0);
+@keyframes moveEffect {
+  0% {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.2);
+    /* margin이나 padding쓰면 reflow-성능문제가 생겨서 transform속성을 씀 */
+    /* x좌표y좌표 */
+    transform: translate(0, 0);
   }
-  100%{
-  font-size: 24px;
-  color: rgba(0,0,0,1);
-  transform: translate(400px,75px);
+
+  100% {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    transform: translate(400px, 75px);
 
   }
 }
 
-@keyframes fadeEffect{
-  0%{opacity: 1;}
-  100%{opacity: 0;}
+@keyframes fadeEffect {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
-.visual{
+.visual {
   /* background: orange; */
   height: 120px;
   /* 앱솔루트의 before,after를 똑같은 위치에 겹쳐놓기 위해 씀 */
   position: relative;
 }
+
 /* 1,3번이미지/2,4번이미지 영역 2개여야함
 영역에 컨텐츠를 담을게 아니라 꽃모양 배경만 담을거임
 div에 백그라운드 깔아주면 됨
 비포에 배경2개 애프터의 배경2개 깔아줌
 마크업 안건들이고 싶어서 가상선택자 사용*/
-.visual::before, .visual::after{
-content: "";
-position: absolute;
-/* 부모와 똑같게 하려고 width,height 사용 */
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-animation-name: fadeEffect;
-animation-duration: 2000ms;
-/* 무한 반복 */
-animation-iteration-count: infinite;
-animation-direction: alternate;
+.visual::before,
+.visual::after {
+  content: "";
+  position: absolute;
+  /* 부모와 똑같게 하려고 width,height 사용 */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation-name: fadeEffect;
+  animation-duration: 2000ms;
+  /* 무한 반복 */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 
-.visual::before{
+.visual::before {
   /* background-color: yellow; */
   /* background-image: url(./images/ani_flower_01.png),
                     url(./images/ani_flower_02.png);
   background-repeat: no-repeat;
   background-position: 0 -10px,600px 0; */
   background: url(./images/ani_flower_01.png) no-repeat 0 -10px,
-  url(./images/ani_flower_02.png) no-repeat 600px 0;
+    url(./images/ani_flower_02.png) no-repeat 600px 0;
 }
-.visual::after{
+
+.visual::after {
   /* background-color: pink; */
   background: url(./images/ani_flower_03.png) no-repeat 300px 0,
-  url(./images/ani_flower_04.png) no-repeat 800px 0;
+    url(./images/ani_flower_04.png) no-repeat 800px 0;
   animation-delay: 1000ms;
 }
 
-.visual-text{
+.visual-text {
   font-family: Georgia, 'Times New Roman', Times, serif;
   /* background-color: slateblue; */
   animation-name: moveEffect;
@@ -312,66 +340,78 @@ animation-direction: alternate;
 }
 
 /* 메인 */
-.main{
+.main {
   background: #fff;
   min-height: 450px;
   display: flow-root;
   padding: 30px 15px;
   border-radius: 15px 15px 0 0;
 }
-.group{
+
+.group {
   margin: 0 15px;
   float: left;
 }
-.group1{
-width: 250px;
+
+.group1 {
+  width: 250px;
 }
-.group2{
-background-color: salmon;
-width: 380px;
+
+.group2 {
+  /* background-color: salmon; */
+  width: 380px;
 }
-.group3{
-background-color: yellow;
-width: 190px;
+
+.group3 {
+  width: 190px;
 }
 
 /* 로그인 */
-.login{
+.login {
   box-shadow: 5px 5px 0 0 #ccc;
   background: orange radial-gradient(circle at right top, orange, orangered);
   padding: 10px;
   border-radius: 5px;
 }
-.login-title{
-background-color: transparent;
-color: yellow;
-font-size: 15px;
-font-weight: 700;
-text-indent: 10px; /*들여쓰기 */
+
+.login-title {
+  background-color: transparent;
+  color: yellow;
+  font-size: 15px;
+  font-weight: 700;
+  text-indent: 10px;
+  /*들여쓰기 */
 }
-.login-form{
+
+.login-form {
   background-color: #fff;
   margin-top: 10px;
   border-radius: 5px 5px 0 0;
   padding: 10px 10px 0 10px;
 }
-.login-form fieldset{ /*로그인 버튼 위치 */
+
+.login-form fieldset {
+  /*로그인 버튼 위치 */
   position: relative;
   border-bottom: 1px solid #aaa;
   padding-bottom: 5px;
 }
-.user-email, .user-pw{
+
+.user-email,
+.user-pw {
   /* background-color: palegreen; */
   margin-bottom: 5px;
 
 }
 
-.login-form label{ /* 아이디 비밀번호 */
+.login-form label {
+  /* 아이디 비밀번호 */
   /* background-color: #e85e2c; */
   display: inline-block;
   width: 52px
 }
-.login-form input{ 
+
+.login-form input {
   /* background-color: aqua; */
   width: 90px;
   height: 24px;
@@ -380,24 +420,28 @@ text-indent: 10px; /*들여쓰기 */
   padding: 1px 1px 1px 5px;
   border-radius: 3px;
 }
-.login-button{
-position: absolute;
-top:0;
-right:0;
-height: 53px; /* 로그인 버튼 높이 늘림 */
-background-color: orangered;
-color: #fff;
-border: 0;
-padding: 0 8px;
-border-radius: 5px;
-font-size: 13px;
+
+.login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 53px;
+  /* 로그인 버튼 높이 늘림 */
+  background-color: orangered;
+  color: #fff;
+  border: 0;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 13px;
 }
-.sign{
+
+.sign {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
   padding: 4px 10px;
   display: flow-root;
 }
+
 .sign li:first-child {
   float: left;
 }
@@ -406,14 +450,15 @@ font-size: 13px;
   float: right;
 }
 
-.sign a{
+.sign a {
   /* display: block; */
   padding: 6px 0;
 }
+
 /*li보다 a에 주는게 더 효과적, 
 li에 주면 a를 블록으로 만들어야하고 공백생김(아이콘과 글자 떨어짐)
 a에 주면 아이콘 눌러도 이동 */
-.sign a::before{
+.sign a::before {
   content: "\e804";
   /* 글꼴 알려주기 */
   font-family: 'fontello';
@@ -430,102 +475,164 @@ a에 주면 아이콘 눌러도 이동 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* 유효성 검사 배너/그림자는 요소가 아님->그림자 위에 겹쳐져서 보임 */
-.validation-list{
-/* background-color: yellow; */
-margin-top: 25px; /* 그림자(5px)만큼 더 줌 */
-/* display: flex; */
+.validation-list {
+  /* background-color: yellow; */
+  margin-top: 25px;
+  /* 그림자(5px)만큼 더 줌 */
+  /* display: flex; */
 }
-.validation-list li{
+
+.validation-list li {
   /* 마진병합-노멀플로우일때 상,하가 겹치면 발생//플렉스(437)면 안겹침 */
   margin-top: 10px;
 }
+
 /* li는 링크태그가 아니고 a가 링크태그여서 449~451줄을
 a안에 넣으면 전체영역이 다 링크가 됨 */
-.validation-list a{
+.validation-list a {
   /* a에 block 을 사용하지않으면 기본값이 inline임->inline이면width가 컨텐츠만큼 줄어버림
   block을 해서 부모랑 크기가 같아짐 */
   display: block;
   /* 이미지를 먼저 주는 이유:이미지가 위에 와야해서 */
-  background: url(./images/validation_icon.png) no-repeat 25px 50%,#ccc linear-gradient(to bottom, #ccc, #eee); 
+  background: url(./images/validation_icon.png) no-repeat 25px 50%, #ccc linear-gradient(to bottom, #ccc, #eee);
   padding: 8px 15px 8px 50px;
-  border-radius:30px;
+  border-radius: 30px;
   border: 1px solid #aaa;
 }
+
 .validation-list a:hover,
-.validation-list a:focus{
+.validation-list a:focus {
   /* 포커스: 키보드 탭 키로 선택했을때도 색깔 바뀜 */
   color: #f00;
 }
 
 /* 웹 관련 용어 */
-.term{
+.term {
   margin-top: 20px;
   border: 1px solid #aaa;
   border-radius: 5px;
   padding: 10px 15px;
-  background : linear-gradient(to bottom, #ccc, #eee); 
+  background: linear-gradient(to bottom, #ccc, #eee);
 }
-.term-title{
-font-size: 15px;
-font-weight: 700;
+
+.term-title {
+  font-size: 15px;
+  font-weight: 700;
 }
-.term-list{
+
+.term-list {
   margin-top: 10px;
 }
-.term-list div{
+
+.term-list div {
   /* background-color: plum; */
   margin-top: 10px;
-  display:flow-root;
+  display: flow-root;
 }
-.term-list-subject, .term-list-brief{
+
+.term-list-subject,
+.term-list-brief {
   /* background-color: lawngreen; */
   float: right;
   width: 145px;
 }
+
 .term-list-subject {
   color: #296897;
   font-weight: 500;
 }
-.term-list-thumbnail{
+
+.term-list-thumbnail {
   /* background-color: skyblue; */
   float: left;
 }
-.term-list-thumbnail img{
+
+.term-list-thumbnail img {
   /* 인라인요소여서 생기는 갭 해결 */
   vertical-align: middle;
 }
-.term-list-brief{
+
+.term-list-brief {
   /* background-color: salmon; */
   margin-top: 5px;
   line-height: 1.5;
 }
 
-.cross .term-list-subject, 
-.cross .term-list-brief{
+.cross .term-list-subject,
+.cross .term-list-brief {
   float: left;
   width: 145px;
-
 }
-.cross .term-list-thumbnail{
+
+.cross .term-list-thumbnail {
   float: right;
 }
 
+/* 검색 폼 */
+.search-form {
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px;
+}
+.search-form-inner{
+  /* background-color: yellow; */
+  display: flex;
+  flex-flow: row nowrap;
+}
+.form-group{
+  /* background-color: pink; */
+  /* 검색상자가 확대돼서 검색버튼이 오른쪽으로 감 */
+  flex-grow: 1;
+  /* 옆에 인풋을 배치하기 위함 */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-right: 10px;
+}
+.form-group-label{
+  /* background-color: lawngreen; */
+  white-space: nowrap;
+  margin-right: 10px;
+}
+.form-group-input{
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  height: 24px;
+  padding: 1px 1px 1px 5px;
+  flex-grow: 1;
+  /* min-width: 0; */
+}
+.search-button{
+  white-space: nowrap;
+  background-color: #000;
+  color: #fff;
+  height: 24px;
+  border: 0;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 1.3rem;
+}
+
 /* 슬로건 */
-.slogan{
+.slogan {
   background: skyblue;
   height: 10vh;
-  clear:both;
+  clear: both;
 }
+
 /* 푸터 */
-.footer{
-  background: #ccc linear-gradient(to bottom, 
-  #ccc 0%, 
-  #eee 35%,
-  #fff 70%, 
-  #fff 100%);
+.footer {
+  background: #ccc linear-gradient(to bottom,
+      #ccc 0%,
+      #eee 35%,
+      #fff 70%,
+      #fff 100%);
 }
-.footer-inner{
+
+.footer-inner {
   background: silver;
   height: 15vh;
 }

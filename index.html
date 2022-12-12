@@ -1,236 +1,240 @@
 <!DOCTYPE html>
-<html lang="ko-KR"> 
+<html lang="ko-KR">
 <!--언어-국가코드-->
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>웹카페</title>
   <!-- 웹폰트 먼저 요청해야하기 때문에 먼저 선언 -->
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="./styles/style.css" /> 
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
 
   <!-- ready() 메소드가 defer 역할을 한다고 생각 -->
   <!-- <script src="./js/jquery.min.js"></script>
   <script src="./js/menu-tab.js"></script> -->
   <script src="./js/main.js" defer></script>
 </head>
+
 <body>
-<header class="header">
-  <!-- 로고 Start -->
-  <h1 class="logo">
-    <a href="./index-complete.html">
-    <img src="./assets/logo.png" alt="web cafe" width="165" height="35">
-  </a>
-</h1>
-<!-- 로고 end -->
-<!-- ul.member>li*5>span[aria-hidden="true"]{:}+a[href="/"] -->
-<ul class="member">
-  <li><a href="/">홈</a></li>
-  <li><span class="divider" aria-hidden="true">:</span><a href="/">로그인</a></li>
-  <li><span class="divider" aria-hidden="true">:</span><a href="/">회원가입</a></li>
-  <li><span class="divider" aria-hidden="true">:</span><a href="/">사이트맵</a></li>
-  <li><span class="divider" aria-hidden="true">:</span><a href="/">english</a></li>
-</ul>
-<nav class="navigation">
-  <h2 class="a11y-hidden">메인 메뉴</h2>
-  <ul class="menu">
-    <li class="menu-item is-active">
-      <button type="button" class="menu-button">HTML에 대해</button>
-      <ul class="sub-menu menu-html">
-        <li>
-          <a href="/">HTML5 소개</a>
-        </li>
-        <li>
-          <a href="/">레퍼런스 소개</a>
-        </li>
-        <li>
-          <a href="/">활용예제</a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu-item ">
-      <button type="button" class="menu-button">CSS에 대해</button>
-      <ul class="sub-menu menu-css">
-        <li>
-          <a href="/">CSS 소개</a>
-        </li>
-        <li>
-          <a href="/">CSS2 VS CSS3</a>
-        </li>
-        <li>
-          <a href="/">CSS 애니메이션</a>
-        </li>
-        <li>
-          <a href="/">CSS Framework</a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu-item">
-      <button type="button" class="menu-button">웹표준</button>
-      <ul class="sub-menu menu-standards">
-        <li>
-          <a href="/">웹표준 이란?</a>
-        </li>
-        <li>
-          <a href="/">W3C</a>
-        </li>
-        <li>
-          <a href="/">HTML5의 현재와 미래</a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu-item">
-      <button type="button" class="menu-button">웹 접근성</button>
-      <ul class="sub-menu menu-accessibility">
-        <li>
-          <a href="/">웹 접근성의 개요</a>
-        </li>
-        <li>
-          <a href="/">장애 환경의 이해</a>
-        </li>
-        <li>
-          <a href="/">장차법</a>
-        </li>
-        <li>
-          <a href="/">웹 접근성 품질마크</a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu-item">
-      <button type="button" class="menu-button">묻고 답하기</button>
-      <ul class="sub-menu menu-qna">
-        <li>
-          <a href="/">묻고 답하기</a>
-        </li>
-        <li>
-          <a href="/">FAQ</a>
-        </li>
-        <li>
-          <a href="/">1대1 질문</a>
-        </li>
-        <li>
-          <a href="/">웹표준</a>
-        </li>
-        <li>
-          <a href="/">웹 접근성</a>
-        </li>
-      </ul>
-    </li>
-    <li class="menu-item">
-      <button type="button" class="menu-button">자료실</button>
-      <ul class="sub-menu menu-archive">
-        <li>
-          <a href="/">공개 자료실</a>
-        </li>
-        <li>
-          <a href="/">이미지 자료실</a>
-        </li>
-        <li>
-          <a href="/">웹표준 자료실</a>
-        </li>
-        <li>
-          <a href="/">웹 접근성 자료실</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</header>
-<div class="visual">
-  <!-- before -->
-  <div class="visual-text">
-    Web Standards &amp; Accessibility
-  </div>
-  <!-- after -->
-</div>
-<main class="main">
-  <div class="group group1">
-    <section class="login">
-      <h2 class="login-title">로그인</h2>
-      <form method="POST" action="https://formspree.io/seulbinim@gmail.com"
-      class="login-form">
-        <!-- fieldset,legend는 그룹화,그룹의 목적을 알려주려고,생략 가능 -->
-        <fieldset>
-        <legend>회원 로그인 폼</legend>
-        <div class="user-email">
-          <label for="userEmail">아이디</label> <!--label : input을 설명하고 연결하는 것/name:서버에서 이름을 구분하기 위함 -->
-          <input type="email" id="userEmail" name="userEmail" placeholder="fe@euid.dev" required/>
-        </div> 
-        <div class="user-pw">
-          <label for="userPw">비밀번호</label>
-          <input type="password" id="userPw" name="userPw" placeholder="8자리 이상" required/>
-        </div>
-        <button type="submit" class="login-button">로그인</button>
-      </fieldset>
-    </form>
-      <ul class="sign">
-        <li><a href="/">회원가입</a></li>
-        <li><a href="/">아이디/비밀번호찾기</a></li>
-      </ul>
-    </section>
-    <h2 class="a11y-hidden">유효성 검사 배너</h2>
-    <ul class="validation-list">
-      <li>
-        <a href="/" target="_blank" rel="noopener noreferrer" title="마크업 유효성검사 사이트로 이동(새창)">
-        WC3 Markup Validation
+  <header class="header">
+    <!-- 로고 Start -->
+    <h1 class="logo">
+      <a href="./index-complete.html">
+        <img src="./assets/logo.png" alt="web cafe" width="165" height="35">
       </a>
-      </li>
-      <li>
-        <a href="/" target="_blank" rel="noopener noreferrer" title="CSS 유효성검사 사이트로 이동(새창)">
-        CSS Validation Service
-      </a>
-      </li>
+    </h1>
+    <!-- 로고 end -->
+    <!-- ul.member>li*5>span[aria-hidden="true"]{:}+a[href="/"] -->
+    <ul class="member">
+      <li><a href="/">홈</a></li>
+      <li><span class="divider" aria-hidden="true">:</span><a href="/">로그인</a></li>
+      <li><span class="divider" aria-hidden="true">:</span><a href="/">회원가입</a></li>
+      <li><span class="divider" aria-hidden="true">:</span><a href="/">사이트맵</a></li>
+      <li><span class="divider" aria-hidden="true">:</span><a href="/">english</a></li>
     </ul>
-    <section class="term">
-      <h2 class="term-title">웹 관련 용어</h2>
-      <dl class="term-list">
-        <div>
-          <dt class="term-list-subject">웹 표준 이란?</dt>
-          <dd class="term-list-thumbnail">
-            <img src="./assets/web_standards.gif" alt="W3C 로고" />
-          </dd>
-          <dd class="term-list-brief">
-            W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...
-          </dd>
-        </div>
-        <div class="cross">
-          <dt class="term-list-subject">웹 표준 이란?</dt>
-          <dd class="term-list-thumbnail">
-            <img src="./assets/web_standards.gif" alt="W3C 로고" />
-          </dd>
-          <dd class="term-list-brief">
-            W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...
-          </dd>
-        </div>
-      </dl>
-    </section>
+    <nav class="navigation">
+      <h2 class="a11y-hidden">메인 메뉴</h2>
+      <ul class="menu">
+        <li class="menu-item is-active">
+          <button type="button" class="menu-button">HTML에 대해</button>
+          <ul class="sub-menu menu-html">
+            <li>
+              <a href="/">HTML5 소개</a>
+            </li>
+            <li>
+              <a href="/">레퍼런스 소개</a>
+            </li>
+            <li>
+              <a href="/">활용예제</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item ">
+          <button type="button" class="menu-button">CSS에 대해</button>
+          <ul class="sub-menu menu-css">
+            <li>
+              <a href="/">CSS 소개</a>
+            </li>
+            <li>
+              <a href="/">CSS2 VS CSS3</a>
+            </li>
+            <li>
+              <a href="/">CSS 애니메이션</a>
+            </li>
+            <li>
+              <a href="/">CSS Framework</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <button type="button" class="menu-button">웹표준</button>
+          <ul class="sub-menu menu-standards">
+            <li>
+              <a href="/">웹표준 이란?</a>
+            </li>
+            <li>
+              <a href="/">W3C</a>
+            </li>
+            <li>
+              <a href="/">HTML5의 현재와 미래</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <button type="button" class="menu-button">웹 접근성</button>
+          <ul class="sub-menu menu-accessibility">
+            <li>
+              <a href="/">웹 접근성의 개요</a>
+            </li>
+            <li>
+              <a href="/">장애 환경의 이해</a>
+            </li>
+            <li>
+              <a href="/">장차법</a>
+            </li>
+            <li>
+              <a href="/">웹 접근성 품질마크</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <button type="button" class="menu-button">묻고 답하기</button>
+          <ul class="sub-menu menu-qna">
+            <li>
+              <a href="/">묻고 답하기</a>
+            </li>
+            <li>
+              <a href="/">FAQ</a>
+            </li>
+            <li>
+              <a href="/">1대1 질문</a>
+            </li>
+            <li>
+              <a href="/">웹표준</a>
+            </li>
+            <li>
+              <a href="/">웹 접근성</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <button type="button" class="menu-button">자료실</button>
+          <ul class="sub-menu menu-archive">
+            <li>
+              <a href="/">공개 자료실</a>
+            </li>
+            <li>
+              <a href="/">이미지 자료실</a>
+            </li>
+            <li>
+              <a href="/">웹표준 자료실</a>
+            </li>
+            <li>
+              <a href="/">웹 접근성 자료실</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="visual">
+    <!-- before -->
+    <div class="visual-text">
+      Web Standards &amp; Accessibility
+    </div>
+    <!-- after -->
   </div>
-  <div class="group group2">
-    <h2 class="a11y-hidden">검색</h2>
-    <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="search-form">
-      <fieldset>
-        <legend>검색 폼</legend>
-        <div class="search-form-inner">
-          <div class="form-group">
-            <label for="search" class="form-group-label"><span class="icon-search" aria-hidden="true"></span>자료검색</label>
-            <input type="search" id="search" class="form-group-input" required placeholder="검색어를 입력하세요. 예)HTML5" />
+  <main class="main">
+    <div class="group group1">
+      <section class="login">
+        <h2 class="login-title">로그인</h2>
+        <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="login-form">
+          <!-- fieldset,legend는 그룹화,그룹의 목적을 알려주려고,생략 가능 -->
+          <fieldset>
+            <legend>회원 로그인 폼</legend>
+            <div class="user-email">
+              <label for="userEmail">아이디</label> <!--label : input을 설명하고 연결하는 것/name:서버에서 이름을 구분하기 위함 -->
+              <input type="email" id="userEmail" name="userEmail" placeholder="fe@euid.dev" required />
+            </div>
+            <div class="user-pw">
+              <label for="userPw">비밀번호</label>
+              <input type="password" id="userPw" name="userPw" placeholder="8자리 이상" required />
+            </div>
+            <button type="submit" class="login-button">로그인</button>
+          </fieldset>
+        </form>
+        <ul class="sign">
+          <li><a href="/">회원가입</a></li>
+          <li><a href="/">아이디/비밀번호찾기</a></li>
+        </ul>
+      </section>
+      <h2 class="a11y-hidden">유효성 검사 배너</h2>
+      <ul class="validation-list">
+        <li>
+          <a href="/" target="_blank" rel="noopener noreferrer" title="마크업 유효성검사 사이트로 이동(새창)">
+            WC3 Markup Validation
+          </a>
+        </li>
+        <li>
+          <a href="/" target="_blank" rel="noopener noreferrer" title="CSS 유효성검사 사이트로 이동(새창)">
+            CSS Validation Service
+          </a>
+        </li>
+      </ul>
+      <section class="term">
+        <h2 class="term-title">웹 관련 용어</h2>
+        <dl class="term-list">
+          <div>
+            <dt class="term-list-subject">웹 표준 이란?</dt>
+            <dd class="term-list-thumbnail">
+              <img src="./assets/web_standards.gif" alt="W3C 로고" />
+            </dd>
+            <dd class="term-list-brief">
+              W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...
+            </dd>
           </div>
-          <button type="submit" class="button-fill button">검색</button>
-        </div>
-      </fieldset>
-    </form>
-  </div>
-  <div class="group group3">그룹3</div>
-</main>
-<article class="slogan">슬로건</article>
-<footer class="footer">
-  <div class="footer-inner">
-    푸터
-  </div>
-</footer>
-<!--  div로 나눈 이유: footer 영역 안에 글자들을 배치할 때 쓰려고 -->
+          <div class="cross">
+            <dt class="term-list-subject">웹 표준 이란?</dt>
+            <dd class="term-list-thumbnail">
+              <img src="./assets/web_standards.gif" alt="W3C 로고" />
+            </dd>
+            <dd class="term-list-brief">
+              W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+    <div class="group group2">
+      <h2 class="a11y-hidden">검색</h2>
+      <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="search-form">
+        <fieldset>
+          <legend>검색 폼</legend>
+          <div class="search-form-inner">
+            <div class="form-group">
+              <label for="search" class="form-group-label"><span class="icon-search"
+                  aria-hidden="true"></span>자료검색</label>
+              <input type="search" id="search" class="form-group-input" required placeholder="검색어를 입력하세요. 예)HTML5" />
+            </div>
+            <button type="submit" class="search-button button-fill button">검색</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="group group3">그룹3</div>
+  </main>
+  <article class="slogan">슬로건</article>
+  <footer class="footer">
+    <div class="footer-inner">
+      푸터
+    </div>
+  </footer>
+  <!--  div로 나눈 이유: footer 영역 안에 글자들을 배치할 때 쓰려고 -->
 
 
 </body>
+
 </html>
