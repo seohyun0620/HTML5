@@ -594,6 +594,9 @@ a안에 넣으면 전체영역이 다 링크가 됨 */
 }
 .form-group-label{
   /* background-color: lawngreen; */
+  /* 크로스브라우징 이슈를 해결하기 위해 밑 코드 사용
+  flex를 써서 white-space: nowrap 보다 flex-shrink를 씀
+  flex를 안쓰면 white-space: nowrap사용 */
   flex-shrink: 0;
   margin-right: 10px;
 }
@@ -603,6 +606,7 @@ a안에 넣으면 전체영역이 다 링크가 됨 */
   height: 24px;
   padding: 1px 1px 1px 5px;
   flex-grow: 1;
+  /* form이 브라우저마다 오류가 있어 크로싱해결을 위해 씀 */
   min-width: 0;
   width: 100%;
 }
