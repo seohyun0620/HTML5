@@ -440,8 +440,13 @@ margin-top: 25px; /* 그림자(5px)만큼 더 줌 */
   /* 마진병합-노멀플로우일때 상,하가 겹치면 발생//플렉스(437)면 안겹침 */
   margin-top: 10px;
 }
+/* li는 링크태그가 아니고 a가 링크태그여서 449~451줄을
+a안에 넣으면 전체영역이 다 링크가 됨 */
 .validation-list a{
+  /* a에 block 을 사용하지않으면 기본값이 inline임->inline이면width가 컨텐츠만큼 줄어버림
+  block을 해서 부모랑 크기가 같아짐 */
   display: block;
+  /* 이미지를 먼저 주는 이유:이미지가 위에 와야해서 */
   background: url(./images/validation_icon.png) no-repeat 25px 50%,#ccc linear-gradient(to bottom, #ccc, #eee); 
   padding: 8px 15px 8px 50px;
   border-radius:30px;
@@ -449,8 +454,63 @@ margin-top: 25px; /* 그림자(5px)만큼 더 줌 */
 }
 .validation-list a:hover,
 .validation-list a:focus{
+  /* 포커스: 키보드 탭 키로 선택했을때도 색깔 바뀜 */
   color: #f00;
 }
+
+/* 웹 관련 용어 */
+.term{
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background : linear-gradient(to bottom, #ccc, #eee); 
+}
+.term-title{
+font-size: 15px;
+font-weight: 700;
+}
+.term-list{
+  margin-top: 10px;
+}
+.term-list div{
+  /* background-color: plum; */
+  margin-top: 10px;
+  display:flow-root;
+}
+.term-list-subject, .term-list-brief{
+  /* background-color: lawngreen; */
+  float: right;
+  width: 145px;
+}
+.term-list-subject {
+  color: #296897;
+  font-weight: 500;
+}
+.term-list-thumbnail{
+  /* background-color: skyblue; */
+  float: left;
+}
+.term-list-thumbnail img{
+  /* 인라인요소여서 생기는 갭 해결 */
+  vertical-align: middle;
+}
+.term-list-brief{
+  /* background-color: salmon; */
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.cross .term-list-subject, 
+.cross .term-list-brief{
+  float: left;
+  width: 145px;
+
+}
+.cross .term-list-thumbnail{
+  float: right;
+}
+
 /* 슬로건 */
 .slogan{
   background: skyblue;
