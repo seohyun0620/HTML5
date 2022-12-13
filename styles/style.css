@@ -536,6 +536,8 @@ a안에 넣으면 전체영역이 다 링크가 됨 */
 .term-list-brief {
   /* background-color: lawngreen; */
   float: right;
+  /* 크기를 주지 않으면 오른쪽으로 배치가 불가능->
+  웹표준이란 밑에 있는 공간에 배치를 하려면 그 공간 크기에 맞게 사이즈를 조절해함 */
   width: 145px;
 }
 
