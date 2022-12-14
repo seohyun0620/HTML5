@@ -809,6 +809,7 @@ margin: 10px 0;
   height: 27px;
   overflow: hidden;
   padding-top: 0;
+  /* transition: <property> <duration> <timing-function> <delay>; */
   transition: height 400ms 0ms, padding 400ms 400ms;
   /* transition-property:background-color ;
   transition-duration: 2000ms;
