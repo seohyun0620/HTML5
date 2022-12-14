@@ -842,20 +842,65 @@ margin: 10px 0;
   position: relative;
 }
 .favorite-list{
-  background-color: yellow;
+  /* background-color: yellow; */
   list-style-type:none ;
+  /* display:flow-root; */
 }
 .favorite-list li{
   margin-top: 10px;
+  counter-increment: number;
+  position: relative;
+  /* background-color: pink; */
+  /* display: flex;
+  flex-flow: row nowrap;
+  align-items: center; */
 }
 .favorite-list li::before{
-  content: "1";
+  content: counter(number);
   background-color: #aaa;
   color: #fff;
-  padding: 1px 5px;
+  padding: 1px 6px;
+  /* rem은 루트 기준으로 사이즈 설정 */
   font-size: 1.2rem;
-  margin-right: 6px;
+  margin-right: 5px;
   border-radius: 3px;
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+  line-height: 1.5;
+}
+/* .no1::before{
+  content: "1";
+}
+.no2::before{
+  content: "2";
+}
+.no3::before{
+  content: "3";
+}
+.no4::before{
+  content: "4";
+} */
+
+.up, .stop, .down{
+  /* display: inline-block; */
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -6px;
+  width: 20px;
+  height: 11px;
+  margin-left: auto;
+  background: url(./images/rank.png) no-repeat 100% 0%;
+}
+.stop{
+  /* background-position: 0 -20px; */
+  background-position:100% 48%;
+}
+.down{
+  /* x축 y축 */
+  /* background-position: 0 -44px; */
+  background-position:100% 100%;
 }
 .favorite-more{
   position:absolute;
